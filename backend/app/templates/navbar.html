@@ -12,11 +12,12 @@
             box-sizing: border-box;
         }
 
-        body {
+        body{
             font-family: Arial, sans-serif;
             background-color: #000;
-            color: #fff;
+            color: white;
         }
+
 
         .block {
             display: flex;
@@ -327,21 +328,383 @@
         .footer a:hover {
             text-decoration: underline;
         }
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+        
+        .footer .social-icons a {
+            color: greenyellow;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer .social-icons a:hover {
+            color: yellowgreen;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: greenyellow;
+            color: black;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: yellowgreen;
+        }
+
+        .nav-container {
+            background-color: black;
+            padding: 10px 20px;
+        }
+        
+        
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+
+        .nav-logo {
+            color: greenyellow;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-item {
+            color: greenyellow;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .nav-item:hover {
+            background-color: greenyellow;
+            color: black;
+            border-radius: 5px;
+        }
+        
+
+        .nav-button {
+            background-color: greenyellow;
+            color: black;
+            border: none;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: -5px; 
+        }
+        
+        .nav-button:hover {
+            background-color: black;
+            color: greenyellow;
+        }
+        
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: greenyellow;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: black;
+                padding: 10px;
+                border-radius: 5px;
+                gap: 10px;
+            }
+        
+            .nav-menu.active {
+                display: flex; 
+            }
+        
+            .nav-item {
+                font-size: 18px;
+                padding: 10px;
+            }
+        
+            .nav-button {
+                font-size: 16px;
+                padding: 8px 16px;
+                margin-top: -5px; 
+            }
+        
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 30px;
+    background-color: black; 
+}
+
+
+.first-container {
+    flex: 1;
+    color: greenyellow; 
+}
+
+.text p {
+    font-size: 36px; 
+    margin: 0;
+    font-weight: bold;
+}
+
+.text-2 h1 {
+    font-size: 48px; 
+    margin: 10px 0;
+    line-height: 1.2; 
+    font-weight: bold;
+}
+
+.text-3 p {
+    font-size: 22px; 
+    max-width: 600px; 
+    margin-top: 20px;
+}
+
+
+.second-container img {
+    max-width: 120%; 
+    height: auto;
+    display: block; 
+    margin-left: -10%; 
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .block {
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .text p {
+        font-size: 32px; 
+        margin: 0;
+    }
+
+    .text-2 h1 {
+        font-size: 40px; 
+        margin: 8px 0;
+    }
+
+    .text-3 p {
+        font-size: 22px; 
+        margin-top: 15px;
+    }
+
+    .second-container img {
+        max-width: 130%; 
+        margin-left: -15%; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .text p {
+        font-size: 28px; 
+    }
+
+    .text-2 h1 {
+        font-size: 32px; 
+        margin: 6px 0;
+    }
+
+    .text-3 p {
+        font-size: 20px; 
+        margin-top: 10px;
+    }
+
+    .second-container img {
+        max-width: 140%; 
+        margin-left: -20%; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .text p {
+        font-size: 24px; 
+    }
+
+    .text-2 h1 {
+        font-size: 28px; 
+        margin: 4px 0;
+    }
+
+    .text-3 p {
+        font-size: 18px; 
+        margin-top: 8px;
+    }
+
+    .second-container img {
+        max-width: 150%; 
+        margin-left: -25%; 
+    }
+}
+/* Основные стили для навигационной панели */
+.nav-container {
+    position: relative;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: black;
+}
+
+.nav-logo {
+    color: greenyellow;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex; /* Показываем меню по умолчанию на больших экранах */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-item {
+    color: greenyellow;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-button {
+    background-color: greenyellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Стили для бургер-меню */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: greenyellow;
+    cursor: pointer;
+}
+
+/* Стили для крестика закрытия */
+.close-menu {
+    font-size: 30px;
+    color: greenyellow;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Убедитесь, что крестик находится выше меню */
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Скрываем меню по умолчанию на маленьких экранах */
+        flex-direction: column;
+        width: 250px; /* Ширина меню */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%; /* Высота на всю высоту экрана */
+        background-color: black;
+        padding: 60px 20px 20px; /* Увеличенный верхний отступ для крестика */
+        margin: 0;
+        opacity: 0;
+        transform: translateX(100%); /* Скрыто за правым краем экрана */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление и скрытие */
+        z-index: 999; /* Убедитесь, что меню находится под крестиком */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Показываем меню при активации */
+        opacity: 1;
+        transform: translateX(0); /* Меню появится справа */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+        text-align: center; /* Центрируем элементы меню для мобильных устройств */
+    }
+}
+
+        
     </style>
 </head>
 <body>
-    <header>
-        <div class="upper-nav">
-            <a href="#">Game Company &larr;</a>
-            <a href="{% url 'store' %}">Store</a>
-            <a href="#" class="nav-link-item active">Basket</a>
-            <a href="#" class="nav-link-item">Chat</a>
-            <div class="auto-actions">
-                <button id="register-login-btn">Register/Login</button>
-            </div>
-        </div>
-    </header>
 
+    <div class="nav-container">
+        <div class="nav-bar">
+            <a href="#" class="nav-logo">Game Company</a>
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <ul class="nav-menu" id="nav-menu">
+                <button class="close-menu" id="close-menu"></button>
+                <li><a href="{% url 'store' %}" class="nav-item">Store</a></li>
+                <li><a href="#" class="nav-item">Basket</a></li>
+                <li><a href="#" class="nav-item">Chat</a></li>
+                <li><button id="register-login-btn" class="nav-button">Register/Login</button></li>
+            </ul>
+        </div>
+    </div> 
+   
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -412,17 +775,17 @@
 
     <section class="features">
         <div class="feature">
-            <img src="path-to-icon1.png" alt="Feature 1">
+            <img src="{% static 'images/61fw7I5VRRL._AC_UF1000,1000_QL80_.jpg' %}" alt="Feature 1">
             <h3>Feature 1</h3>
             <p>Explore the best games and latest releases.</p>
         </div>
         <div class="feature">
-            <img src="path-to-icon2.png" alt="Feature 2">
+            <img src="{% static 'images/AcjaXqwZzggGiKLFdEfHMp0H.webp' %}" alt="Feature 2">
             <h3>Feature 2</h3>
-            <p>Get exclusive offers and discounts.</p>
+            <p>Get exclusive offers and discounts with Game Company</p>
         </div>
         <div class="feature">
-            <img src="path-to-icon3.png" alt="Feature 3">
+            <img src="{% static 'images/Warcraft_III_The_Frozen_Throne_Cover.jpg' %}" alt="Feature 3">
             <h3>Feature 3</h3>
             <p>Join our community and share your experiences.</p>
         </div>
@@ -461,37 +824,105 @@
         <button onclick="document.getElementById('register-login-btn').click();">Get Started</button>
     </section>
 
-    
+
     <footer class="footer">
         <p>&copy; 2024 Game Company. All rights reserved.</p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">F</a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">T</a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">I</a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">L</a>
+        </div>
     </footer>
-
+    
+    
+    
     <script>
-
+        
         document.getElementById('show-login').addEventListener('click', function() {
             document.getElementById('register-form').style.display = 'none';
             document.getElementById('login-form').style.display = 'block';
         });
-
+    
         document.getElementById('show-register').addEventListener('click', function() {
             document.getElementById('login-form').style.display = 'none';
             document.getElementById('register-form').style.display = 'block';
         });
-
+    
         document.getElementById('register-login-btn').addEventListener('click', function() {
             document.getElementById('modal').style.display = 'block';
         });
-
+    
         document.querySelector('.close').addEventListener('click', function() {
             document.getElementById('modal').style.display = 'none';
         });
-
+    
         window.addEventListener('click', function(event) {
             if (event.target == document.getElementById('modal')) {
                 document.getElementById('modal').style.display = 'none';
             }
         });
+    
+        
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var scrollToTopButton = document.createElement('button');
+            scrollToTopButton.className = 'scroll-to-top';
+            scrollToTopButton.textContent = '↑';
+            scrollToTopButton.style.display = 'none'; 
+            scrollToTopButton.style.position = 'fixed';
+            scrollToTopButton.style.bottom = '20px';
+            scrollToTopButton.style.right = '20px';
+            scrollToTopButton.style.backgroundColor = 'greenyellow';
+            scrollToTopButton.style.color = 'black';
+            scrollToTopButton.style.border = 'none';
+            scrollToTopButton.style.borderRadius = '50%';
+            scrollToTopButton.style.width = '50px';
+            scrollToTopButton.style.height = '50px';
+            scrollToTopButton.style.fontSize = '24px';
+            scrollToTopButton.style.cursor = 'pointer';
+            document.body.appendChild(scrollToTopButton);
+    
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    scrollToTopButton.style.display = 'block';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+    
+            
+            scrollToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const closeMenu = document.getElementById('close-menu');
+        
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+            });
+        
+            closeMenu.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        
+            // Закрыть меню при клике вне его
+            document.addEventListener('click', (event) => {
+                if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && !closeMenu.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        
+        
     </script>
+    
 </body>
 </html>
