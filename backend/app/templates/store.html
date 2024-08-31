@@ -5,262 +5,518 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Cards</title>
-    
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <div class="card">
-        <img src="{% static 'images/cyberpank.jpeg' %}" alt="Cyberpunk 2077">
-        <div class="info">
-            <h2>Cyberpunk 2077</h2>
-            <p>$59.99</p>
-            <button class="buy-button" data-game="Cyberpunk 2077" data-price="59.99">Buy Now</button>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="{% static 'images/Tears-of-the-Kingdom-wallpaper-1170x720-1.jpg' %}" alt="The Legend of Zelda">
-        <div class="info">
-            <h2>The Legend of Zelda: Tears of the Kingdom</h2>
-            <p>$69.99</p>
-            <button class="buy-button" data-game="The Legend of Zelda: Tears of the Kingdom" data-price="69.99">Buy Now</button>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="{% static 'images/59b060933292222e_1920xH.jpeg.jpg' %}" alt="Hogwarts Legacy">
-        <div class="info">
-            <h2>Hogwarts Legacy</h2>
-            <p>$49.99</p>
-            <button class="buy-button" data-game="Hogwarts Legacy" data-price="49.99">Buy Now</button>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="{% static 'images/Diesel_productv2_detroit-become-human_home_Detroit_PC_Carousel-1920x1080-6e90610a5d314ce0c12860770cc38c1b23213000.jpg' %}" alt="Elden Ring">
-        <div class="info">
-            <h2>Detroit Become Uman</h2>
-            <p>$59.99</p>
-            <button class="buy-button" data-game="Elden Ring" data-price="59.99">Buy Now</button>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="{% static 'images/rdr21280-1540446855527.jpg' %}" alt="Red Dead Redemption 2">
-        <div class="info">
-            <h2>Red Dead Redemption 2</h2>
-            <p>$39.99</p>
-            <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
+    
+    <div class="header">
+        <div class="nav-container">
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav class="navbar" id="navbar">
+                <a href="#">Home</a>
+                <a href="#">Games</a>
+                <a href="#">Cart</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search games...">
+                <button id="search-button">Search</button>
+            </div>
         </div>
     </div>
     
+    
+    <div class="cards-container">
+        <div class="card">
+            <img src="{% static 'images/cyberpank.jpeg' %}" alt="Cyberpunk 2077">
+            <div class="info">
+                <h2>Cyberpunk 2077</h2>
+                <p>$59.99</p>
+                <button class="buy-button" data-game="Cyberpunk 2077" data-price="59.99">Buy Now</button>
+                <button class="cart-button" data-game="Cyberpunk 2077" data-price="59.99">Add to Cart</button>
+            </div>
+        </div>
 
-    <div class="card">
-        <img src="{% static 'images/640px-Heavy_Rain_Cover_Art.jpg' %}" alt="Red Dead Redemption 2">
-        <div class="info">
-            <h2>Heavy Rain</h2>
-            <p>$18.78</p>
-            <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
+        <div class="card">
+            <img src="{% static 'images/Tears-of-the-Kingdom-wallpaper-1170x720-1.jpg' %}" alt="The Legend of Zelda">
+            <div class="info">
+                <h2>The Legend of Zelda: Tears of the Kingdom</h2>
+                <p>$69.99</p>
+                <button class="buy-button" data-game="The Legend of Zelda: Tears of the Kingdom" data-price="69.99">Buy Now</button>
+                <button class="cart-button" data-game="The Legend of Zelda: Tears of the Kingdom" data-price="69.99">Add to Cart</button>
+            </div>
         </div>
-    </div>
-    
 
-    <div class="card">
-        <img src="{% static 'images/capsule_616x353.jpg' %}" alt="Red Dead Redemption 2">
-        <div class="info">
-            <h2>Metro 2033</h2>
-            <p>$49.29</p>
-            <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
+        <div class="card">
+            <img src="{% static 'images/59b060933292222e_1920xH.jpeg.jpg' %}" alt="Hogwarts Legacy">
+            <div class="info">
+                <h2>Hogwarts Legacy</h2>
+                <p>$49.99</p>
+                <button class="buy-button" data-game="Hogwarts Legacy" data-price="49.99">Buy Now</button>
+                <button class="cart-button" data-game="Hogwarts Legacy" data-price="49.99">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/Diesel_productv2_detroit-become-human_home_Detroit_PC_Carousel-1920x1080-6e90610a5d314ce0c12860770cc38c1b23213000.jpg' %}" alt="Detroit Become Human">
+            <div class="info">
+                <h2>Detroit Become Human</h2>
+                <p>$59.99</p>
+                <button class="buy-button" data-game="Detroit Become Human" data-price="59.99">Buy Now</button>
+                <button class="cart-button" data-game="Detroit Become Human" data-price="59.99">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/rdr21280-1540446855527.jpg' %}" alt="Red Dead Redemption 2">
+            <div class="info">
+                <h2>Red Dead Redemption 2</h2>
+                <p>$39.99</p>
+                <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
+                <button class="cart-button" data-game="Red Dead Redemption 2" data-price="39.99">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/640px-Heavy_Rain_Cover_Art.jpg' %}" alt="Heavy Rain">
+            <div class="info">
+                <h2>Heavy Rain</h2>
+                <p>$18.78</p>
+                <button class="buy-button" data-game="Heavy Rain" data-price="18.78">Buy Now</button>
+                <button class="cart-button" data-game="Heavy Rain" data-price="18.78">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/capsule_616x353.jpg' %}" alt="Metro 2033">
+            <div class="info">
+                <h2>Metro 2033</h2>
+                <p>$49.29</p>
+                <button class="buy-button" data-game="Metro 2033" data-price="49.29">Buy Now</button>
+                <button class="cart-button" data-game="Metro 2033" data-price="49.29">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/0b179504-412d-4af7-9e00-3e3d92633577.jpg' %}" alt="Grand Theft Auto 5">
+            <div class="info">
+                <h2>Grand Theft Auto 5</h2>
+                <p>$50.00</p>
+                <button class="buy-button" data-game="Grand Theft Auto 5" data-price="50.00">Buy Now</button>
+                <button class="cart-button" data-game="Grand Theft Auto 5" data-price="50.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/capsule_616x353 (1).jpg' %}" alt="Grand Theft Auto 5">
+            <div class="info">
+                <h2>Forza Horizon 5</h2>
+                <p>$40.00</p>
+                <button class="buy-button" data-game="Forza Horizon 5" data-price="40.00">Buy Now</button>
+                <button class="cart-button" data-game="Forza Horizon 5" data-price="40.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/ea-sports-fc-24-1-jpg.webp' %}" alt="Grand Theft Auto 5">
+            <div class="info">
+                <h2>FIFA 24</h2>
+                <p>$25.25</p>
+                <button class="buy-button" data-game="FIFA 24" data-price="25.25">Buy Now</button>
+                <button class="cart-button" data-game="FIFA 24" data-price="25.25">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/header.jpg' %}" alt="Call of Duty 4: Modern Warfare">
+            <div class="info">
+                <h2>Call of Duty 4: Modern Warfare</h2>
+                <p>$29.88</p>
+                <button class="buy-button" data-game="Call of Duty 4: Modern Warfare" data-price="29.88">Buy Now</button>
+                <button class="cart-button" data-game="Call of Duty 4: Modern Warfare" data-price="29.88">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'images/8355e657a19311b158a3553a154e109199d6991c7791a20c3305af1f84d15ed7.jpg' %}" alt="The Witcher 2: Assassins of Kings">
+            <div class="info">
+                <h2>The Witcher 2: Assassins of Kings</h2>
+                <p>$19.99</p>
+                <button class="buy-button" data-game="The Witcher 2: Assassins of Kings" data-price="19.99">Buy Now</button>
+                <button class="cart-button" data-game="The Witcher 2: Assassins of Kings" data-price="19.99">Add to Cart</button>
+            </div>
         </div>
     </div>
-    
-    <div class="card">
-        <img src="{% static 'images/0b179504-412d-4af7-9e00-3e3d92633577.jpg' %}" alt="Red Dead Redemption 2">
-        <div class="info">
-            <h2>Grand Theft Auto 5</h2>
-            <p>$50.00</p>
-            <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
-        </div>
-    </div>
-    
-    <div class="card">
-        <img src="{% static 'images/header.jpg' %}" alt="Red Dead Redemption 2">
-        <div class="info">
-            <h2>Call of Duty 4: Modern Warfare</h2>
-            <p>$29.88</p>
-            <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
-        </div>
-    </div>
-    
-    <div class="card">
-        <img src="{% static 'images/8355e657a19311b158a3553a154e109199d6991c7791a20c3305af1f84d15ed7.jpg' %}" alt="Red Dead Redemption 2">
-        <div class="info">
-            <h2>The Witcher 2: Assassins of Kings</h2>
-            <p>$19.99</p>
-            <button class="buy-button" data-game="Red Dead Redemption 2" data-price="39.99">Buy Now</button>
-        </div>
-    </div>
-    
-    <div id="notification" class="notification">
+
+    <div class="notification" id="notification">
         <p id="notification-message"></p>
     </div>
-
-
-    <div id="loading-spinner" class="loading-spinner"></div>
-
-
-    
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const buyButtons = document.querySelectorAll('.buy-button');
-        const notification = document.getElementById('notification');
-        const notificationMessage = document.getElementById('notification-message');
-    
-        buyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-
-                button.classList.add('processing');
-                button.disabled = true;
-    
-                const game = button.getAttribute('data-game');
-                const price = button.getAttribute('data-price');
-                
-
-                setTimeout(() => {
-                    notificationMessage.textContent = `Successfully purchased ${game} for $${price}!`;
-                    notification.style.display = 'block';
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buyButtons = document.querySelectorAll('.buy-button');
+            const cartButtons = document.querySelectorAll('.cart-button');
+            const notification = document.getElementById('notification');
+            const notificationMessage = document.getElementById('notification-message');
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            const cardsContainer = document.querySelector('.cards-container');
+        
+            
+            buyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.add('processing');
+                    button.disabled = true;
+        
+                    const game = button.getAttribute('data-game');
+                    const price = button.getAttribute('data-price');
+        
                     setTimeout(() => {
-                        notification.style.display = 'none';
-                        button.classList.remove('processing');
-                        button.disabled = false;
-                    }, 3000);
-                }, 1000); 
+                        notificationMessage.textContent = `Successfully purchased ${game} for $${price}!`;
+                        notification.style.display = 'block';
+        
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                            button.classList.remove('processing');
+                            button.disabled = false;
+                        }, 3000);
+                    }, 1000);
+                });
+            });
+        
+            
+            cartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.classList.add('processing');
+                    button.disabled = true;
+        
+                    const game = button.getAttribute('data-game');
+                    const price = button.getAttribute('data-price');
+        
+                    setTimeout(() => {
+                        notificationMessage.textContent = `${game} has been added to your cart!`;
+                        notification.style.display = 'block';
+        
+                        setTimeout(() => {
+                            notification.style.display = 'none';
+                            button.classList.remove('processing');
+                            button.disabled = false;
+                        }, 3000);
+                    }, 1000);
+                });
+            });
+        
+            
+            function filterCards() {
+                const query = searchInput.value.toLowerCase();
+                const cards = cardsContainer.querySelectorAll('.card');
+        
+                cards.forEach(card => {
+                    const title = card.querySelector('.info h2').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        
+            
+            searchButton.addEventListener('click', filterCards);
+        
+            
+            searchInput.addEventListener('input', filterCards);
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navbar = document.querySelector('.navbar');
+        
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('active');
+                navbar.classList.toggle('active');
             });
         });
-    });
-    
-</script>
+        
+        
+        
+    </script>
+</body>
 <style>
+    body {
+        background-color: #121212; 
+        color: #e0e0e0; 
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .header {
+        background-color: #1f1f1f;
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .navbar a {
+        color: greenyellow;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    
+    
+    .search-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    #search-input {
+        padding: 5px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        margin-right: 10px;
+    }
+    
+    #search-button {
+        padding: 5px 15px;
+        border: none;
+        background-color: greenyellow;
+        color: #000000;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    #search-button:hover {
+        background-color: #d4d400;
+        transform: scale(1.05);
+    }
+    
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 60px; 
+    }
+    
+    .card {
+        background: #1f1f1f; 
+        border: 2px solid greenyellow; 
+        border-radius: 10px; 
+        width: 220px; 
+        height: 320px; 
+        text-align: center;
+        padding: 15px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+    }
+    
+    .card:hover {
+        transform: scale(1.05); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); 
+        background-color: #2a2a2a; 
+    }
+    
+    .card img {
+        width: 100%;
+        height: auto;
+        max-height: 150px; 
+        border-radius: 8px; 
+        margin-bottom: 10px;
+    }
+    
+    .info {
+        padding: 0;
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+    
+    .info h2 {
+        margin: 10px 0;
+        font-size: 1.2em; 
+        font-weight: bold;
+        color: white; 
+    }
+    
+    .info p {
+        margin: 5px 0;
+        font-size: 1.1em; 
+        color: #b0b0b0; 
+    }
+    
+    .buy-button, .cart-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px; 
+        border: none;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease; 
+    }
+    
+    .buy-button {
+        background-color: greenyellow; 
+        color: #000000; 
+    }
+    
+    .buy-button:hover {
+        background-color: #d4d400; 
+        transform: scale(1.05); 
+    }
+    
+    .cart-button {
+        background-color: #f39c12; 
+        color: #ffffff; 
+    }
+    
+    .cart-button:hover {
+        background-color: #e67e22; 
+        transform: scale(1.05); 
+    }
+    
+    .notification {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: greenyellow; 
+        color: #000000; 
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+    
+    .notification p {
+        margin: 0;
+        font-size: 1em; 
+    }
+    
+    .loading-spinner {
+        display: none; 
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top: 5px solid greenyellow;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 
-body {
-    background-color: #121212; 
-    color: #e0e0e0; 
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; 
-    padding: 20px;
-    margin: 0;
-}
-
-.card {
-    background: #1f1f1f; 
-    border: 2px solid greenyellow; 
-    border-radius: 10px; 
-    width: 220px; 
-    height: 320px; 
-    text-align: center;
-    padding: 15px; 
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-}
-
-.card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); 
-    background-color: #2a2a2a; 
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-    max-height: 150px; 
-    border-radius: 8px; 
-    margin-bottom: 10px; }
-
-.info {
-    padding: 0;
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-}
-
-.info h2 {
-    margin: 10px 0;
-    font-size: 1.2em; 
-    font-weight: bold;
-    color: white; 
-}
-
-.info p {
-    margin: 5px 0;
-    font-size: 1.1em; 
-    color: #b0b0b0; 
-}
-
-.buy-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px; 
-    background-color: greenyellow; 
-    color: #000000; 
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease; 
-}
-
-.buy-button:hover {
-    background-color: #d4d400; 
-    transform: scale(1.05); 
-}
-
-
-.notification {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: greenyellow; 
-    color: #000000; 
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-}
-
-.notification p {
-    margin: 0;
-    font-size: 1em; 
-}
-
-
-.loading-spinner {
+    
+.burger-menu {
     display: none; 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    border-top: 5px solid greenyellow;
-    animation: spin 1s linear infinite;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30px; 
+    height: 25px; 
+    z-index: 2000; 
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+.burger-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: greenyellow;
+    margin: 3px 0;
+    transition: 0.3s;
 }
+
+
+.burger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex; 
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0; 
+        background-color: #121212;
+        width: 250px; 
+        height: 100%;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        transform: translateX(-100%); 
+        transition: transform 0.3s ease;
+        z-index: 1000; 
+    }
+
+    .navbar.active {
+        transform: translateX(0); 
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        color: white;
+        font-size: 1.2em; 
+    }
+
+    .burger-menu {
+        display: flex; 
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px; 
+        left: 10px; 
+        font-size: 1.5em; 
+        color: greenyellow;
+        cursor: pointer;
+        z-index: 2000; 
+    }
+}
+
 
 </style>
 </html>

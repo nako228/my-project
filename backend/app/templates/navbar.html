@@ -584,7 +584,7 @@
         margin-left: -25%; 
     }
 }
-/* Основные стили для навигационной панели */
+
 .nav-container {
     position: relative;
 }
@@ -604,7 +604,7 @@
 }
 
 .nav-menu {
-    display: flex; /* Показываем меню по умолчанию на больших экранах */
+    display: flex; 
     list-style: none;
     margin: 0;
     padding: 0;
@@ -628,7 +628,7 @@
     cursor: pointer;
 }
 
-/* Стили для бургер-меню */
+
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -638,7 +638,7 @@
     cursor: pointer;
 }
 
-/* Стили для крестика закрытия */
+
 .close-menu {
     font-size: 30px;
     color: greenyellow;
@@ -648,32 +648,32 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
-    z-index: 1000; /* Убедитесь, что крестик находится выше меню */
+    z-index: 1000; 
 }
 
-/* Медиазапрос для мобильных устройств */
+
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; /* Скрываем меню по умолчанию на маленьких экранах */
+        display: none; 
         flex-direction: column;
-        width: 250px; /* Ширина меню */
+        width: 250px; 
         position: fixed;
         top: 0;
         right: 0;
-        height: 100%; /* Высота на всю высоту экрана */
+        height: 100%; 
         background-color: black;
-        padding: 60px 20px 20px; /* Увеличенный верхний отступ для крестика */
+        padding: 60px 20px 20px; 
         margin: 0;
         opacity: 0;
-        transform: translateX(100%); /* Скрыто за правым краем экрана */
-        transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление и скрытие */
-        z-index: 999; /* Убедитесь, что меню находится под крестиком */
+        transform: translateX(100%); 
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+        z-index: 999; 
     }
 
     .nav-menu.active {
-        display: flex; /* Показываем меню при активации */
+        display: flex; 
         opacity: 1;
-        transform: translateX(0); /* Меню появится справа */
+        transform: translateX(0); 
     }
 
     .menu-toggle {
@@ -682,7 +682,7 @@
 
     .nav-menu li {
         margin: 10px 0;
-        text-align: center; /* Центрируем элементы меню для мобильных устройств */
+        text-align: center; 
     }
 }
 
@@ -698,7 +698,7 @@
             <ul class="nav-menu" id="nav-menu">
                 <button class="close-menu" id="close-menu"></button>
                 <li><a href="{% url 'store' %}" class="nav-item">Store</a></li>
-                <li><a href="#" class="nav-item">Basket</a></li>
+                <li><a href="#" class="nav-item">Contact</a></li>
                 <li><a href="#" class="nav-item">Chat</a></li>
                 <li><button id="register-login-btn" class="nav-button">Register/Login</button></li>
             </ul>
@@ -912,7 +912,7 @@
                 navMenu.classList.remove('active');
             });
         
-            // Закрыть меню при клике вне его
+            
             document.addEventListener('click', (event) => {
                 if (!navMenu.contains(event.target) && !menuToggle.contains(event.target) && !closeMenu.contains(event.target)) {
                     navMenu.classList.remove('active');
