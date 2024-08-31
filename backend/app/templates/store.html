@@ -152,28 +152,62 @@
     
     
     <div class="reviews-container">
-        <!-- Заголовок секции отзывов -->
+        
         <h2>Reviews</h2>
         
-        <!-- Форма для добавления нового отзыва -->
+        
         <form class="review-form">
-            <!-- Поле для ввода имени рецензента -->
+            
             <input type="text" id="reviewer-name" placeholder="Your Name" required>
             
-            <!-- Поле для ввода текста отзыва -->
+            
             <textarea placeholder="Write your review here..." required></textarea>
             
-            <!-- Кнопка для отправки отзыва -->
+            
             <button type="submit">Submit Review</button>
         </form>
         
-        <!-- Контейнер для отображения списка отзывов -->
+        
         <div class="reviews-list">
-            <!-- Здесь будут отображаться добавленные отзывы -->
+            
         </div>
     </div>
 
+    <footer class="footer">
+        <section class="about-us">
+            <h2>Welcome to [Company Name]</h2>
+            <p>We are your gateway to exciting games. Our team of passionate developers, designers, and artists is united by one goal: to create unique gaming worlds that inspire and entertain players worldwide.</p>
+            
+            <h3>Our Mission</h3>
+            <p>Our mission is to craft gaming experiences that immerse players in compelling stories and engaging mechanics. We believe games are more than just entertainment—they're a way to tell stories, evoke emotions, and connect people.</p>
 
+            <h3>Our Principles</h3>
+            <ul>
+                <li><strong>Innovation:</strong> We constantly seek new ideas and approaches to offer something unique and fresh.</li>
+                <li><strong>Quality:</strong> Each of our games undergoes rigorous testing to ensure the highest quality in graphics, gameplay, and overall user experience.</li>
+                <li><strong>Feedback:</strong> We value player feedback and actively incorporate it into our development process to make our games better.</li>
+                <li><strong>Creativity:</strong> We strive for originality and creativity in every project, creating memorable gaming moments.</li>
+            </ul>
+
+            <h3>Our Products</h3>
+            <ul>
+                <li><strong>[Game Title 1]:</strong> An exciting adventure game filled with mysteries and secrets.</li>
+                <li><strong>[Game Title 2]:</strong> A thrilling action game with unique mechanics and a deep storyline.</li>
+                <li><strong>[Game Title 3]:</strong> A strategy game that challenges your planning and decision-making skills.</li>
+            </ul>
+
+            <h3>Join Us</h3>
+            <p>Stay updated on our latest projects and news through social media or subscribe to our newsletter. We love sharing our achievements and plans with our dedicated fans.</p>
+            
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+            <p>Follow us on <a href="https://twitter.com" target="_blank">Twitter</a>, <a href="https://facebook.com" target="_blank">Facebook</a>, and <a href="https://instagram.com" target="_blank">Instagram</a>.</p>
+        </section>
+
+        
+        <div class="footer-content">
+            <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+        </div>
     <div class="notification" id="notification">
         <p id="notification-message"></p>
     </div>
@@ -607,80 +641,80 @@
         max-width: 600px;
         margin: 20px auto;
         padding: 20px;
-        background-color: #121212; /* Темный фон для контейнера */
+        background-color: #121212; 
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Более сильная тень */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     }
     
-    /* Стили для заголовка */
+    
     .reviews-container h2 {
         margin-top: 0;
         font-size: 28px;
-        color: greenyellow; /* Цвет заголовка */
+        color: greenyellow; 
         text-align: center;
     }
     
-    /* Стили для формы отзыва */
+    
     .review-form {
         display: flex;
         flex-direction: column;
     }
     
-    /* Стили для полей ввода */
+    
     .review-form input,
     .review-form textarea {
         width: 100%;
         padding: 12px;
-        border: 2px solid greenyellow; /* Граница полей ввода */
+        border: 2px solid greenyellow; 
         border-radius: 6px;
-        background-color: black; /* Темный фон полей ввода */
-        color: #e0e0e0; /* Светлый текст в полях ввода */
+        background-color: black; 
+        color: #e0e0e0; 
         margin-bottom: 15px;
         font-size: 16px;
-        box-sizing: border-box; /* Учитывает отступы и границы в ширину */
+        box-sizing: border-box; 
     }
     
     .review-form input::placeholder,
     .review-form textarea::placeholder {
-        color: #888; /* Цвет текста плейсхолдера */
+        color: #888; 
     }
     
-    /* Стили для кнопки отправки */
+    
     .review-form button {
         padding: 12px;
         border: none;
         border-radius: 6px;
-        background-color: greenyellow; /* Цвет кнопки */
-        color: black; /* Текст кнопки */
+        background-color: greenyellow; 
+        color: black; 
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
     
     .review-form button:hover {
-        background-color: #aaff00; /* Более светлый оттенок при наведении */
+        background-color: #aaff00; 
     }
     
-    /* Стили для списка отзывов */
+    
     .reviews-list {
         margin-top: 20px;
     }
     
-    /* Стили для отзыва */
+    
     .review-item {
-        background-color: black; /* Темный фон для отзыва */
-        border: 1px solid greenyellow; /* Граница отзыва */
+        background-color: black; 
+        border: 1px solid greenyellow; 
         border-radius: 6px;
         padding: 15px;
         margin-bottom: 15px;
         font-size: 16px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень для отзыва */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
     }
     
-    /* Стили для информации о рецензенте */
+    
     .review-item .reviewer-info {
         font-size: 14px;
-        color: greenyellow; /* Цвет имени рецензента */
+        color: greenyellow; 
         margin-bottom: 10px;
     }
     
@@ -688,10 +722,144 @@
         font-weight: bold;
     }
     
-    /* Стили для текста отзыва */
+    
     .review-item .review-text {
         font-size: 16px;
-        color: #e0e0e0; /* Цвет текста отзыва */
+        color: #e0e0e0; 
     }
+    
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a; 
+    color: #e0e0e0; 
+    margin: 0;
+    padding: 0;
+}
+
+
+.reviews-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #121212; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+
+.reviews-container h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: greenyellow; 
+    text-align: center;
+}
+
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid greenyellow; 
+    border-radius: 6px;
+    background-color: black; 
+    color: #e0e0e0; 
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+    color: #888; 
+}
+
+
+.review-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: greenyellow; 
+    color: black; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #aaff00; 
+}
+
+
+.reviews-list {
+    margin-top: 20px;
+}
+
+
+.review-item {
+    background-color: black; 
+    border: 1px solid greenyellow; 
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+
+.review-item .reviewer-info {
+    font-size: 14px;
+    color: greenyellow; 
+    margin-bottom: 10px;
+}
+
+.review-item .reviewer-info span {
+    font-weight: bold;
+}
+
+
+.review-item .review-text {
+    font-size: 16px;
+    color: #e0e0e0; 
+}
+
+
+.footer {
+    background-color: #121212; 
+    color: #e0e0e0; 
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid greenyellow; 
+}
+
+.footer-content {
+    margin-top: 10px;
+}
+
+.about-us h2,
+.about-us h3 {
+    color: greenyellow; 
+}
+
+.about-us ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.about-us a {
+    color: greenyellow; 
+    text-decoration: none;
+}
+
+.about-us a:hover {
+    text-decoration: underline; 
+}
+
 </style>
 </html>
