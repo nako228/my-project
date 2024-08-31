@@ -17,7 +17,7 @@
                 <div class="bar"></div>
             </div>
             <nav class="navbar" id="navbar">
-                <a href="#">Home</a>
+                <a href="{% url 'home' %}">Home</a>
                 <a href="#">Games</a>
                 <a href="#">Cart</a>
                 <a href="#">Contact</a>
@@ -111,6 +111,80 @@
             </div>
         </div>
         <div class="card">
+            <img src="{% static 'images/maxresdefault (1).jpg' %}" alt="Marvel's Avengers">
+            <div class="info">
+                <h2>Marvel's Avengers</h2>
+                <p>$25.00</p>
+                <button class="buy-button" data-game="Marvel's Avengers" data-price="25.00">Buy Now</button>
+                <button class="cart-button" data-game="Marvel's Avengers" data-price="25.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/capsule_616x353 (2).jpg' %}" alt="Far Cry 6">
+            <div class="info">
+                <h2>Far Cry 6</h2>
+                <p>$43.00</p>
+                <button class="buy-button" data-game="Far Cry 6" data-price="43.00">Buy Now</button>
+                <button class="cart-button" data-game="Far Cry 6" data-price="43.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/final-fantasy-xvi-button-1628180674117.jpg' %}" alt="Final Fantasy XVI">
+            <div class="info">
+                <h2>Final Fantasy XVI</h2>
+                <p>$34.73</p>
+                <button class="buy-button" data-game="Final Fantasy XVI" data-price="34.73">Buy Now</button>
+                <button class="cart-button" data-game="Final Fantasy XVI" data-price="34.73">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/capsule_616x353 (3).jpg' %}" alt="Sekiro: Shadows Die Twice">
+            <div class="info">
+                <h2>Sekiro: Shadows Die Twice</h2>
+                <p>$28.32</p>
+                <button class="buy-button" data-game="Sekiro: Shadows Die Twice" data-price="28.32">Buy Now</button>
+                <button class="cart-button" data-game="Sekiro: Shadows Die Twice" data-price="28.32">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/H2x1_NSwitchDS_DyingLight2StayHumanCloudVersion_image1600w.jpg' %}" alt="Dying Light 2">
+            <div class="info">
+                <h2>Dying Light 2</h2>
+                <p>$21.01</p>
+                <button class="buy-button" data-game="Dying Light 2" data-price="21.01">Buy Now</button>
+                <button class="cart-button" data-game="Dying Light 2" data-price="21.01">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/0b179504-412d-4af7-9e00-3e3d92633577.jpg' %}" alt="Grand Theft Auto 5">
+            <div class="info">
+                <h2>Grand Theft Auto 5</h2>
+                <p>$50.00</p>
+                <button class="buy-button" data-game="Grand Theft Auto 5" data-price="50.00">Buy Now</button>
+                <button class="cart-button" data-game="Grand Theft Auto 5" data-price="50.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/0b179504-412d-4af7-9e00-3e3d92633577.jpg' %}" alt="Grand Theft Auto 5">
+            <div class="info">
+                <h2>Grand Theft Auto 5</h2>
+                <p>$50.00</p>
+                <button class="buy-button" data-game="Grand Theft Auto 5" data-price="50.00">Buy Now</button>
+                <button class="cart-button" data-game="Grand Theft Auto 5" data-price="50.00">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/0b179504-412d-4af7-9e00-3e3d92633577.jpg' %}" alt="Grand Theft Auto 5">
+            <div class="info">
+                <h2>Grand Theft Auto 5</h2>
+                <p>$50.00</p>
+                <button class="buy-button" data-game="Grand Theft Auto 5" data-price="50.00">Buy Now</button>
+                <button class="cart-button" data-game="Grand Theft Auto 5" data-price="50.00">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="card">
             <img src="{% static 'images/capsule_616x353 (1).jpg' %}" alt="Grand Theft Auto 5">
             <div class="info">
                 <h2>Forza Horizon 5</h2>
@@ -200,7 +274,7 @@
             <p>Stay updated on our latest projects and news through social media or subscribe to our newsletter. We love sharing our achievements and plans with our dedicated fans.</p>
             
             <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+            <p>Email: <a href="mailto:info@yourcompany.com">game@company.com</a></p>
             <p>Follow us on <a href="https://twitter.com" target="_blank">Twitter</a>, <a href="https://facebook.com" target="_blank">Facebook</a>, and <a href="https://instagram.com" target="_blank">Instagram</a>.</p>
         </section>
 
@@ -329,17 +403,17 @@
             const reviewsList = document.querySelector('.reviews-list');
         
             form.addEventListener('submit', (event) => {
-                event.preventDefault(); // Предотвращаем отправку формы
+                event.preventDefault(); 
         
                 const reviewerName = nameInput.value.trim();
                 const reviewText = textarea.value.trim();
         
                 if (reviewText && reviewerName) {
-                    // Создаем элемент для отзыва
+                    
                     const reviewItem = document.createElement('div');
                     reviewItem.className = 'review-item';
                     
-                    // Добавляем имя рецензента и текст отзыва
+                    
                     reviewItem.innerHTML = `
                         <div class="reviewer-info">
                             <span>${reviewerName}</span>
@@ -349,10 +423,10 @@
                         </div>
                     `;
         
-                    // Добавляем отзыв в начало списка
+
                     reviewsList.prepend(reviewItem);
         
-                    // Очищаем поля формы
+                    
                     nameInput.value = '';
                     textarea.value = '';
                 } else {
