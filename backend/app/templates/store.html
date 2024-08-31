@@ -149,6 +149,30 @@
             </div>
         </div>
     </div>
+    
+    
+    <div class="reviews-container">
+        <!-- Заголовок секции отзывов -->
+        <h2>Reviews</h2>
+        
+        <!-- Форма для добавления нового отзыва -->
+        <form class="review-form">
+            <!-- Поле для ввода имени рецензента -->
+            <input type="text" id="reviewer-name" placeholder="Your Name" required>
+            
+            <!-- Поле для ввода текста отзыва -->
+            <textarea placeholder="Write your review here..." required></textarea>
+            
+            <!-- Кнопка для отправки отзыва -->
+            <button type="submit">Submit Review</button>
+        </form>
+        
+        <!-- Контейнер для отображения списка отзывов -->
+        <div class="reviews-list">
+            <!-- Здесь будут отображаться добавленные отзывы -->
+        </div>
+    </div>
+
 
     <div class="notification" id="notification">
         <p id="notification-message"></p>
@@ -237,7 +261,71 @@
                 navbar.classList.toggle('active');
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.review-form');
+            const textarea = form.querySelector('textarea');
+            const reviewsList = document.querySelector('.reviews-list');
+            
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); 
+                
+                const reviewText = textarea.value.trim();
+                if (reviewText) {
+                    
+                    const reviewItem = document.createElement('div');
+                    reviewItem.className = 'review-item';
+                    reviewItem.textContent = reviewText;
+                    
+                    
+                    reviewsList.prepend(reviewItem);
+                    
+                    
+                    textarea.value = '';
+                } else {
+                    alert('Please enter a review before submitting.');
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.review-form');
+            const nameInput = form.querySelector('#reviewer-name');
+            const textarea = form.querySelector('textarea');
+            const reviewsList = document.querySelector('.reviews-list');
         
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Предотвращаем отправку формы
+        
+                const reviewerName = nameInput.value.trim();
+                const reviewText = textarea.value.trim();
+        
+                if (reviewText && reviewerName) {
+                    // Создаем элемент для отзыва
+                    const reviewItem = document.createElement('div');
+                    reviewItem.className = 'review-item';
+                    
+                    // Добавляем имя рецензента и текст отзыва
+                    reviewItem.innerHTML = `
+                        <div class="reviewer-info">
+                            <span>${reviewerName}</span>
+                        </div>
+                        <div class="review-text">
+                            ${reviewText}
+                        </div>
+                    `;
+        
+                    // Добавляем отзыв в начало списка
+                    reviewsList.prepend(reviewItem);
+        
+                    // Очищаем поля формы
+                    nameInput.value = '';
+                    textarea.value = '';
+                } else {
+                    alert('Please enter both your name and a review before submitting.');
+                }
+            });
+        });
         
         
     </script>
@@ -276,7 +364,6 @@
         font-weight: bold;
         font-size: 1.1em;
     }
-    
     
     .search-container {
         display: flex;
@@ -434,89 +521,177 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-
     
-.burger-menu {
-    display: none; 
-    cursor: pointer;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 30px; 
-    height: 25px; 
-    z-index: 2000; 
-}
-
-.burger-menu .bar {
-    width: 30px;
-    height: 3px;
-    background-color: greenyellow;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
-
-.burger-menu.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger-menu.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-
-.navbar {
-    display: flex;
-    gap: 20px;
-}
-
-
-@media (max-width: 768px) {
-    .navbar {
-        display: flex; 
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0; 
-        background-color: #121212;
-        width: 250px; 
-        height: 100%;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-        transform: translateX(-100%); 
-        transition: transform 0.3s ease;
-        z-index: 1000; 
-    }
-
-    .navbar.active {
-        transform: translateX(0); 
-    }
-
-    .navbar a {
-        margin: 10px 0;
-        color: white;
-        font-size: 1.2em; 
-    }
-
     .burger-menu {
-        display: flex; 
-    }
-
-    .close-button {
-        position: absolute;
-        top: 10px; 
-        left: 10px; 
-        font-size: 1.5em; 
-        color: greenyellow;
+        display: none; 
         cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 30px; 
+        height: 25px; 
         z-index: 2000; 
     }
-}
-
-
+    
+    .burger-menu .bar {
+        width: 30px;
+        height: 3px;
+        background-color: greenyellow;
+        margin: 3px 0;
+        transition: 0.3s;
+    }
+    
+    .burger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .burger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    .navbar {
+        display: flex;
+        gap: 20px;
+    }
+    
+    @media (max-width: 768px) {
+        .navbar {
+            display: flex; 
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0; 
+            background-color: #121212;
+            width: 250px; 
+            height: 100%;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transform: translateX(-100%); 
+            transition: transform 0.3s ease;
+            z-index: 1000; 
+        }
+    
+        .navbar.active {
+            transform: translateX(0); 
+        }
+    
+        .navbar a {
+            margin: 10px 0;
+            color: white;
+            font-size: 1.2em; 
+        }
+    
+        .burger-menu {
+            display: flex; 
+        }
+    
+        .close-button {
+            position: absolute;
+            top: 10px; 
+            left: 10px; 
+            font-size: 1.5em; 
+            color: greenyellow;
+            cursor: pointer;
+            z-index: 2000; 
+        }
+    }
+    
+    
+    
+    .reviews-container {
+        width: 90%;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #121212; /* Темный фон для контейнера */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Более сильная тень */
+    }
+    
+    /* Стили для заголовка */
+    .reviews-container h2 {
+        margin-top: 0;
+        font-size: 28px;
+        color: greenyellow; /* Цвет заголовка */
+        text-align: center;
+    }
+    
+    /* Стили для формы отзыва */
+    .review-form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Стили для полей ввода */
+    .review-form input,
+    .review-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid greenyellow; /* Граница полей ввода */
+        border-radius: 6px;
+        background-color: black; /* Темный фон полей ввода */
+        color: #e0e0e0; /* Светлый текст в полях ввода */
+        margin-bottom: 15px;
+        font-size: 16px;
+        box-sizing: border-box; /* Учитывает отступы и границы в ширину */
+    }
+    
+    .review-form input::placeholder,
+    .review-form textarea::placeholder {
+        color: #888; /* Цвет текста плейсхолдера */
+    }
+    
+    /* Стили для кнопки отправки */
+    .review-form button {
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background-color: greenyellow; /* Цвет кнопки */
+        color: black; /* Текст кнопки */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .review-form button:hover {
+        background-color: #aaff00; /* Более светлый оттенок при наведении */
+    }
+    
+    /* Стили для списка отзывов */
+    .reviews-list {
+        margin-top: 20px;
+    }
+    
+    /* Стили для отзыва */
+    .review-item {
+        background-color: black; /* Темный фон для отзыва */
+        border: 1px solid greenyellow; /* Граница отзыва */
+        border-radius: 6px;
+        padding: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень для отзыва */
+    }
+    
+    /* Стили для информации о рецензенте */
+    .review-item .reviewer-info {
+        font-size: 14px;
+        color: greenyellow; /* Цвет имени рецензента */
+        margin-bottom: 10px;
+    }
+    
+    .review-item .reviewer-info span {
+        font-weight: bold;
+    }
+    
+    /* Стили для текста отзыва */
+    .review-item .review-text {
+        font-size: 16px;
+        color: #e0e0e0; /* Цвет текста отзыва */
+    }
 </style>
 </html>
