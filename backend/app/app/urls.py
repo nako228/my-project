@@ -14,16 +14,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+# urls.py
 from django.contrib import admin
 from django.urls import path, include
+from . import views  # Убедитесь, что все необходимые импорты включены
 from .views import home
-from . import views
-
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('game.urls')),  # Убедитесь, что это включение не дублируется
     path("", home, name='home'),
     path('accounts/', include('allauth.urls')),
     path('store/', views.store, name='store'),
-] 
+    path('create-my-game/', views.create_my_game, name='create_my_game'),
+]
