@@ -1,0 +1,17 @@
+<!-- game/templates/game_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game List</title>
+</head>
+<body>
+    <h1>List of Games</h1>
+    <ul>
+        {% for game in games %}
+            <li>{{ game.title }} - {{ game.description }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_my_game' %}">Create another game</a>
+</body>
+</html>
