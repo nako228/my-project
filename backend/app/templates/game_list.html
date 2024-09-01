@@ -1,17 +1,87 @@
-<!-- game/templates/game_list.html -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Game List</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: #1f1f1f;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #7fff00; 
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #333;
+        }
+
+        a {
+            color: #121212;
+            background-color: #7fff00; 
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            background-color: #76e600; 
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <h1>List of Games</h1>
-    <ul>
-        {% for game in games %}
-            <li>{{ game.title }} - {{ game.description }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'create_my_game' %}">Create another game</a>
+    <div class="container">
+        <h1>List of Games</h1>
+        <ul>
+            {% for game in games %}
+                <li>{{ game.title }} - {{ game.description }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'create_my_game' %}">Create another game</a>
+    </div>
 </body>
 </html>
