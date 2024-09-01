@@ -28,4 +28,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('store/', views.store, name='store'),
     path('create-my-game/', views.create_my_game, name='create_my_game'),
+     path('game/', include('game.urls')),
 ]
