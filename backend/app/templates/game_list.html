@@ -6,99 +6,107 @@
     <title>Game List</title>
     <style>
         body {
-            background-color: #000; /* Черный фон */
-            color: greenyellow;
-            font-family: 'Roboto', sans-serif;
+            background-color: #0f0f0f; /* Темный фон */
+            color: #f0f0f0; /* Светлый текст */
+            font-family: 'Arial', sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px;
         }
 
         .container {
-            text-align: center;
-            background: #000; /* Черный цвет для контейнера */
+            background-color: #1e1e1e; /* Темный контейнер */
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            width: 80%;
-            max-width: 800px;
+            border-radius: 16px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 1200px;
             margin-top: 20px;
-            border: 2px solid greenyellow; /* Зеленая рамка для выделения */
+            border: 2px solid greenyellow; /* Зеленая рамка */
         }
 
         h1 {
-            color: greenyellow; /* Используем цвет greenyellow для заголовка */
-            margin-bottom: 20px;
-            font-size: 28px;
-            font-weight: 500;
+            color: greenyellow; /* Заголовок зеленый */
+            margin-bottom: 30px;
+            font-size: 36px;
+            text-align: center;
         }
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background-color: #000; /* Черный цвет для карточек */
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            border: 2px solid greenyellow; /* Яркий зелёный акцент */
+            border-radius: 12px;
+            border: 2px solid greenyellow; /* Зеленая рамка */
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            color: greenyellow; /* Текст внутри карточек greenyellow */
+            color: #f0f0f0; /* Светлый текст внутри карточек */
         }
 
         .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px); /* Эффект поднятия при наведении */
+            box-shadow: 0 12px 24px rgba(0, 255, 0, 0.5); /* Более яркая тень */
         }
 
         .card-title {
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
         }
 
         .card-description {
-            font-size: 14px;
+            font-size: 16px;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .card-actions {
-            text-align: right;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
         }
 
         .card-button {
             background-color: greenyellow;
             color: #000;
             border: none;
-            padding: 8px 16px;
+            padding: 12px 24px;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: background-color 0.3s;
-            margin-right: 5px; /* Пространство между кнопками */
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
         }
 
         .card-button:hover {
-            background-color: #bada55; /* Немного светлее зелёного для эффекта */
+            background-color: #bada55; /* Светлее зелёный при наведении */
+            transform: scale(1.05); /* Легкий эффект увеличения */
         }
 
-        a.create-game-link {
+        .create-game-link {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
             background-color: greenyellow;
             color: #000;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 30px;
+            border-radius: 8px;
             transition: background-color 0.3s;
+            font-size: 18px;
+            text-align: center;
         }
 
-        a.create-game-link:hover {
+        .create-game-link:hover {
             background-color: #bada55; /* Легкое изменение зелёного */
         }
     </style>
