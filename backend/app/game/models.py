@@ -1,5 +1,3 @@
-# game/models.py
-
 from django.db import models
 
 class Game(models.Model):
