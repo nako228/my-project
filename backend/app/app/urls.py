@@ -20,6 +20,8 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views  
 from .views import home
+from django.conf.urls.i18n import i18n_patterns
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +30,10 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('store/', views.store, name='store'),
     path('create-my-game/', views.create_my_game, name='create_my_game'),
-    
+    path('set_language/', include('django.conf.urls.i18n')),
     path('game/', include('game.urls')),  # Подключение URL-ов приложения
 ]
+
+urlpatterns += i18n_patterns(
+    path('set_language/', include('django.conf.urls.i18n')),
+)

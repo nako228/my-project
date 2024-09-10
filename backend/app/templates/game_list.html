@@ -1,13 +1,11 @@
-<!-- game/templates/game_list.html -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Game List</title>
     <style>
         body {
-            background-color: #0f0f0f; /* Темный фон */
-            color: #f0f0f0; /* Светлый текст */
+            background-color: #000000; 
+            color: #f0f0f0; 
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
@@ -19,18 +17,18 @@
         }
 
         .container {
-            background-color: #1e1e1e; /* Темный контейнер */
+            background-color: #000000; 
             padding: 30px;
             border-radius: 16px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
             width: 90%;
             max-width: 1200px;
             margin-top: 20px;
-            border: 2px solid greenyellow; /* Зеленая рамка */
+            border: 2px solid #00ff00; 
         }
 
         h1 {
-            color: greenyellow; /* Заголовок зеленый */
+            color: #00ff00; 
             margin-bottom: 30px;
             font-size: 36px;
             text-align: center;
@@ -43,18 +41,18 @@
         }
 
         .card {
-            background-color: #000; /* Черный цвет для карточек */
+            background-color: #000; 
             padding: 20px;
             border-radius: 12px;
-            border: 2px solid greenyellow; /* Зеленая рамка */
+            border: 2px solid #00ff00; 
             box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
-            color: #f0f0f0; /* Светлый текст внутри карточек */
+            color: #f0f0f0; 
         }
 
         .card:hover {
-            transform: translateY(-10px); /* Эффект поднятия при наведении */
-            box-shadow: 0 12px 24px rgba(0, 255, 0, 0.5); /* Более яркая тень */
+            transform: translateY(-10px); 
+            box-shadow: 0 12px 24px rgba(0, 255, 0, 0.5); 
         }
 
         .card-title {
@@ -77,7 +75,7 @@
         }
 
         .card-button {
-            background-color: greenyellow;
+            background-color: #00ff00;
             color: #000;
             border: none;
             padding: 12px 24px;
@@ -89,14 +87,14 @@
         }
 
         .card-button:hover {
-            background-color: #bada55; /* Светлее зелёный при наведении */
-            transform: scale(1.05); /* Легкий эффект увеличения */
+            background-color: #bada55; 
+            transform: scale(1.05); 
         }
 
         .create-game-link {
             display: inline-block;
             margin-top: 30px;
-            background-color: greenyellow;
+            background-color: #00ff00;
             color: #000;
             text-decoration: none;
             padding: 15px 30px;
@@ -107,7 +105,7 @@
         }
 
         .create-game-link:hover {
-            background-color: #bada55; /* Легкое изменение зелёного */
+            background-color: #bada55; 
         }
     </style>
 </head>

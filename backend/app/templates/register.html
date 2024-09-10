@@ -2,14 +2,91 @@
 <html>
 <head>
     <title>Register</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000; /* Черный фон страницы */
+            color: #00ff00; /* GreenYellow текст */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background-color: #121212; /* Темно-серый фон контейнера */
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            background-color: #1a1a1a; /* Темный фон полей ввода */
+            border: 1px solid #00ff00; /* GreenYellow границы */
+            color: #00ff00; /* GreenYellow текст в полях */
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
+            background-color: #333; /* Темный фон при фокусе */
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+        button {
+            background-color: #00ff00; /* GreenYellow фон кнопки */
+            border: none;
+            color: #000000; /* Черный текст кнопки */
+            padding: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #00cc00; /* Более темный зеленый при наведении */
+            transform: scale(1.05);
+        }
+        .hidden-rules {
+            color: #ff0000; /* Красный текст для правил, если нужно видеть их для отладки */
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            display: none; /* Скрыть текст с правилами */
+        }
+    </style>
 </head>
 <body>
-    <h2>Register</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
+        <div class="hidden-rules">
+            <p>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+            <p>Your password can’t be too similar to your other personal information.</p>
+            <p>Your password must contain at least 8 characters.</p>
+            <p>Your password can’t be a commonly used password.</p>
+            <p>Your password can’t be entirely numeric.</p>
+            <p>Password confirmation:</p>
+        </div>
+    </div>
 </body>
 </html>
